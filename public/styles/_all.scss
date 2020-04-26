@@ -1,4 +1,24 @@
-body {
+$text-color: (
+    "white": white,
+    "red": red
+);
 
-background-color: rgb(24, 230, 212);
+@function color($color-name){
+    @return map-get($text-color, $color-name)
+}
+
+body {
+    background-color: rgb(24, 230, 212);
+}
+
+// h1 {
+//  color: map-get($text-color, red);
+// }
+
+.main {
+    width: 50%;
+    margin: 0 auto;
+    #{&}__paragraph {
+        color: color(red);
+       }
 }
